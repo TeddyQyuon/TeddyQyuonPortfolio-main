@@ -260,7 +260,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
 [data-theme="dark"] .project-card[data-project="scenthaus-intelligence"] .project-cover-link { background: #1a1714; }
 [data-theme="dark"] .project-card[data-project="meterwise-building-energy-analytics"] .project-cover-link { background: #111a18; }
 [data-theme="dark"] .project-card[data-project="gamevault-marketplace"] .project-cover-link { background: #13172c; }
-[data-theme="dark"] .project-card[data-project="antigravity-mobile-coder"] .project-cover-link { background: #101928; }
 
 [data-theme="dark"] .project-tech-item {
   background: #141c2d;

@@ -71,10 +71,11 @@
 ---
 
 ## 4. Next Actions for Users
-1. **Access Antigravity Mobile Coder**: Visit [https://antigravity-mobile-coder.vercel.app](https://antigravity-mobile-coder.vercel.app) and sign in using:
-   - Email: `teddyhpone007@gmail.com`
-   - Password: `Qyuon118461@`
-   - Security Passcode: `262180`
+1. **Access Antigravity Mobile Coder**: Visit [https://antigravity-mobile-coder.vercel.app](https://antigravity-mobile-coder.vercel.app) and sign in with your own credentials.
+   - Credentials and 2FA passcodes are intentionally NOT stored in this repository.
+   - Security note (2026-10-18): earlier revisions of this file contained plaintext
+     sign-in credentials and a 2FA passcode. They were removed from HEAD, but they
+     remain reachable in git history — treat them as compromised and rotate them.
 2. **Connect Live Google Gemini Key**:
    - Navigate to the **[🔑 Google Accounts]** tab.
    - Enter your personal Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
