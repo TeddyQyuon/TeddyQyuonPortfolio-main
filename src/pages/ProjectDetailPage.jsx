@@ -110,7 +110,8 @@ export default function ProjectDetailPage() {
           py: 1.25,
           px: { xs: 1.5, sm: 2 },
           mb: 3,
-          bgcolor: 'rgba(247, 248, 250, 0.94)',
+          bgcolor: (theme) =>
+            theme.palette.mode === 'dark' ? 'rgba(9, 13, 22, 0.94)' : 'rgba(247, 248, 250, 0.94)',
           backdropFilter: 'blur(10px)',
           border: 1,
           borderColor: 'divider',

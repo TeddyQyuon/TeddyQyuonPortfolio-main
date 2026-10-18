@@ -36,8 +36,12 @@ async function copyText(text) {
   area.style.opacity = '0';
   document.body.appendChild(area);
   area.select();
-  document.execCommand('copy');
+  // execCommand reports whether the copy actually happened. Ignoring that
+  // result would show a "copied" confirmation for a copy that silently failed,
+  // so a rejected fallback is surfaced as a failure instead.
+  const copied = document.execCommand('copy');
   document.body.removeChild(area);
+  if (!copied) throw new Error('Clipboard fallback could not copy the text');
 }
 
 // No backend, no form — simple reliable contact links plus one-tap copy.

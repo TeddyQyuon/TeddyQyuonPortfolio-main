@@ -21,8 +21,15 @@ export default function ScrollProgressBar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    // The scrollable range changes with the viewport (window resize, mobile
+    // browser chrome collapsing), so the percentage must be recomputed then
+    // too — otherwise the bar shows a stale width until the next scroll.
+    window.addEventListener('resize', handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   return (

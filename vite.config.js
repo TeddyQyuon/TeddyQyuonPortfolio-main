@@ -34,6 +34,26 @@ function productionHeaders() {
 export default defineConfig(({ command, mode }) => ({
   plugins: [react()],
   server: { host: '127.0.0.1' },
+  build: {
+    rollupOptions: {
+      output: {
+        // Split the vendor graph so the entry chunk stays under Vite's 500 kB
+        // warning and so framework code caches independently of app code.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          // Only MUI and Emotion form their own chunk. Shared low-level helpers
+          // (@babel/runtime, react-transition-group, clsx, ...) must stay in the
+          // react bucket: MUI imports them AND they import react, so putting
+          // them on the MUI side creates a vendor-mui <-> vendor-react cycle.
+          if (id.includes('@mui') || id.includes('@emotion')) {
+            return 'vendor-mui';
+          }
+          if (id.includes('react-router')) return 'vendor-router';
+          return 'vendor-react';
+        },
+      },
+    },
+  },
   // `vite preview` resolves with command "serve" and mode "production";
   // `vite` (dev) resolves with mode "development" and `vite build` with
   // command "build", so neither touches vercel.json.
