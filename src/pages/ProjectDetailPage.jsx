@@ -45,9 +45,14 @@ export default function ProjectDetailPage() {
         <Typography color="text.secondary" paragraph>
           The project you are looking for does not exist.
         </Typography>
-        <Button component={RouterLink} to="/" variant="contained">
-          Back to Home
-        </Button>
+        <Box sx={{ display: 'flex', gap: 1.5, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Button component={RouterLink} to="/" variant="contained">
+            Back to Home
+          </Button>
+          <Button component={RouterLink} to="/#projects" variant="outlined">
+            Browse all projects
+          </Button>
+        </Box>
       </Container>
     );
   }

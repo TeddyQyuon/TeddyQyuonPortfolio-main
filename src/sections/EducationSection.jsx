@@ -10,6 +10,7 @@ export default function EducationSection() {
     <Box sx={{ bgcolor: 'background.paper', borderTop: 1, borderBottom: 1, borderColor: 'divider' }}>
       <Container maxWidth="lg" className="section-shell" id="education" component="section">
         <SectionHeading
+          index="04"
           eyebrow="Education"
           title="My education journey."
           subtitle="From Myanmar to Singapore — continuing my path in technology."

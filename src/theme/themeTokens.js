@@ -58,7 +58,7 @@ export function getThemeOptions(mode = 'light') {
         primary: isDark ? '#f8fafc' : '#202733',
         secondary: isDark ? '#94a3b8' : '#596477',
       },
-      divider: isDark ? 'rgba(255, 255, 255, 0.08)' : '#dfe4eb',
+      divider: isDark ? 'rgba(255, 255, 255, 0.10)' : '#dfe4eb',
       action: {
         hover: isDark ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.04)',
         selected: isDark ? 'rgba(79, 117, 242, 0.18)' : 'rgba(32, 39, 51, 0.08)',

@@ -8,7 +8,7 @@ import { personalInfo } from '../data/personalInfo';
 export default function ResumeSection() {
   return (
     <Container maxWidth="lg" className="section-shell" id="resume" component="section">
-      <SectionHeading eyebrow="Résumé" title="A closer look at my background." />
+      <SectionHeading index="06" eyebrow="Résumé" title="A closer look at my background." />
       <div className="resume-surface">
         <DescriptionOutlinedIcon sx={{ fontSize: 40, color: 'text.secondary', flexShrink: 0 }} />
         <Box sx={{ minWidth: 0, flexGrow: 1 }}>

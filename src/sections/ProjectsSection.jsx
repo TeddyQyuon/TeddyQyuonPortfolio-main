@@ -60,6 +60,7 @@ export default function ProjectsSection() {
   return (
     <Container maxWidth="lg" className="section-shell" id="projects" component="section">
       <SectionHeading
+        index="01"
         eyebrow="Selected work"
         title="Projects I've built."
         subtitle="From independent web applications to full-stack and analytics coursework."
@@ -142,6 +143,32 @@ export default function ProjectsSection() {
           </Box>
         )}
       </Box>
+
+      {/* Friendly empty state so a zero-result filter never looks broken. */}
+      {filteredProjects.length === 0 && (
+        <Box
+          sx={{
+            p: 4,
+            mb: 5,
+            textAlign: 'center',
+            border: 1,
+            borderColor: 'divider',
+            borderRadius: 2,
+            bgcolor: 'action.hover',
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            No projects match this filter yet.
+          </Typography>
+          <Button
+            size="small"
+            onClick={() => setActiveFilter('all')}
+            sx={{ mt: 1.5, fontWeight: 600, textTransform: 'none' }}
+          >
+            Show all projects
+          </Button>
+        </Box>
+      )}
 
       {/* Personal projects */}
       {personalProjects.length > 0 && (

@@ -62,6 +62,7 @@ export default function ContactSection() {
     <Box sx={{ bgcolor: 'background.paper', borderTop: 1, borderColor: 'divider' }}>
       <Container maxWidth="lg" className="section-shell" id="contact" component="section">
         <SectionHeading
+          index="07"
           eyebrow="Contact"
           title="Let's build something useful."
           subtitle="Open to 1-year technology internships in 2027."
@@ -91,7 +92,7 @@ export default function ContactSection() {
             <Grid item xs={12} sm={3}>
               <Button
                 component="a"
-                href={`mailto:${personalInfo.email}`}
+                href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(`Internship opportunity — ${personalInfo.name}`)}`}
                 variant="contained"
                 startIcon={<EmailIcon />}
                 fullWidth

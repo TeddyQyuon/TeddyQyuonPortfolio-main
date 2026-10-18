@@ -27,8 +27,9 @@ export default function AcademicProgressSection() {
   const toggle = (id) => setExpanded((prev) => (prev === id ? null : id));
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }} id="academic-progress" component="section">
+    <Container maxWidth="lg" className="section-shell" id="academic-progress" component="section">
       <SectionHeading
+        index="05"
         eyebrow="Academic progress"
         title="Academic Progress"
         subtitle="Semester results with full module transparency — projects remain the main evidence"
