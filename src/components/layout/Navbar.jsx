@@ -54,7 +54,8 @@ export default function Navbar() {
         top: 0,
         borderBottom: 1,
         borderColor: 'divider',
-        backdropFilter: 'blur(12px)',
+        backdropFilter: 'blur(16px) saturate(160%)',
+        WebkitBackdropFilter: 'blur(16px) saturate(160%)',
       }}
     >
       <Container maxWidth="lg">
