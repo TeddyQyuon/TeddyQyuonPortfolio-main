@@ -67,13 +67,28 @@ export default function ContactSection() {
           title="Let's build something useful."
           subtitle="Open to 1-year technology internships in 2027."
         />
-        <Box className="contact-surface" sx={{ maxWidth: 860 }}>
-          <Typography paragraph color="text.secondary" sx={{ maxWidth: 640 }}>
+        <Box className="contact-surface">
+          <Typography paragraph color="text.secondary" sx={{ maxWidth: 680, mb: 2.5 }}>
             If you have an internship opportunity in Software Engineering,
             Full-Stack Development, Data/Analytics or a related technical role —
             or would like to see more of my work — get in touch.
           </Typography>
-          <Stack direction="row" spacing={0.5} alignItems="center" sx={{ mb: 2 }}>
+          <Box
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 1,
+              px: 2,
+              py: 0.75,
+              mb: 3,
+              maxWidth: '100%',
+              borderRadius: 2.5,
+              bgcolor: 'background.paper',
+              border: 1,
+              borderColor: 'divider',
+            }}
+          >
+            <EmailIcon fontSize="small" sx={{ color: 'primary.main', flexShrink: 0 }} />
             <Typography variant="body1" sx={{ fontWeight: 600, wordBreak: 'break-all' }}>
               {personalInfo.email}
             </Typography>
@@ -87,9 +102,9 @@ export default function ContactSection() {
                 {copied ? <CheckIcon fontSize="small" /> : <ContentCopyIcon fontSize="small" />}
               </IconButton>
             </Tooltip>
-          </Stack>
+          </Box>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Button
                 component="a"
                 href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(`Internship opportunity — ${personalInfo.name}`)}`}
@@ -100,7 +115,7 @@ export default function ContactSection() {
                 Email Me
               </Button>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Button
                 component="a"
                 href={personalInfo.githubUrl}
@@ -113,7 +128,7 @@ export default function ContactSection() {
                 GitHub
               </Button>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Button
                 component="a"
                 href={personalInfo.linkedinUrl}
@@ -126,7 +141,7 @@ export default function ContactSection() {
                 LinkedIn
               </Button>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Button
                 component="a"
                 href={personalInfo.whatsappUrl}

@@ -59,7 +59,7 @@ export default function Navbar() {
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: 'space-between', py: 0.5 }}>
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 60, md: 68 }, py: 0.75 }}>
           <Box
             component={Link}
             to="/"
@@ -67,19 +67,28 @@ export default function Navbar() {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: 1.25,
+              gap: 1.5,
               textDecoration: 'none',
               color: 'inherit',
             }}
           >
-            <Box sx={{ lineHeight: 1.2 }}>
-              <Typography variant="subtitle1" sx={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.04em' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 800, fontSize: '1.3rem', letterSpacing: '-0.045em', lineHeight: 1 }}>
                 teddy<Box component="span" sx={{ color: 'secondary.main' }}>.</Box>
               </Typography>
+              <Box
+                aria-hidden="true"
+                sx={{
+                  display: { xs: 'none', sm: 'block' },
+                  width: '1px',
+                  height: 16,
+                  bgcolor: 'divider',
+                }}
+              />
               <Typography
                 variant="caption"
                 color="text.secondary"
-                sx={{ display: { xs: 'none', sm: 'block' } }}
+                sx={{ display: { xs: 'none', sm: 'block' }, fontWeight: 500, letterSpacing: '-0.01em' }}
               >
                 Software &amp; data
               </Typography>
@@ -89,18 +98,25 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <Box component="nav" aria-label="Main navigation" sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5, alignItems: 'center' }}>
             {sectionLinks.filter((link) => link.id !== 'resume').map((link) => {
-              const active = activeId === link.id;
+              const active = activeId === link.id || (link.id === 'education' && activeId === 'resume');
               return (
                 <Button
                   key={link.id}
                   href={`#${link.id}`}
                   onClick={(event) => handleSectionClick(event, link.id)}
                   color="inherit"
+                  size="small"
                   aria-current={active ? 'true' : undefined}
                   sx={{
                     position: 'relative',
-                    color: active ? 'primary.main' : 'text.secondary',
-                    '&:hover': { color: 'text.primary' },
+                    px: 1.5,
+                    py: 0.75,
+                    minHeight: 38,
+                    borderRadius: 2,
+                    fontWeight: active ? 650 : 500,
+                    color: active ? 'text.primary' : 'text.secondary',
+                    bgcolor: active ? 'action.hover' : 'transparent',
+                    '&:hover': { color: 'text.primary', bgcolor: 'action.hover' },
                     // Underline indicator that animates in for the active section.
                     '&::after': {
                       content: '""',
@@ -110,7 +126,7 @@ export default function Navbar() {
                       bottom: 4,
                       height: 2,
                       borderRadius: 1,
-                      bgcolor: 'primary.main',
+                      bgcolor: 'secondary.main',
                       transform: active ? 'scaleX(1)' : 'scaleX(0)',
                       transition: 'transform 0.2s ease',
                     },
@@ -127,7 +143,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               variant="contained"
               size="small"
-              sx={{ ml: 1 }}
+              sx={{ ml: 1, px: 2 }}
             >
               Résumé
             </Button>
@@ -140,7 +156,7 @@ export default function Navbar() {
                 sx={{
                   ml: 0.5,
                   p: 1,
-                  borderRadius: 2,
+                  borderRadius: 2.5,
                   border: 1,
                   borderColor: 'divider',
                   bgcolor: 'action.hover',

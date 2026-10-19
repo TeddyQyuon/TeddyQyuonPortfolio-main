@@ -41,7 +41,7 @@ export default function ScrollProgressBar() {
         left: 0,
         height: 3,
         width: `${progress}%`,
-        bgcolor: 'primary.main',
+        background: (theme) => theme.custom.gradients.brand,
         zIndex: 1400,
         transition: 'width 0.08s ease-out',
         pointerEvents: 'none',

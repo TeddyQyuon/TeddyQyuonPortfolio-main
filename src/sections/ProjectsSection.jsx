@@ -67,7 +67,7 @@ export default function ProjectsSection() {
       />
 
       {/* Interactive Project Filter Pills */}
-      <Box sx={{ mb: 4 }}>
+      <Box sx={{ mb: 4.5 }}>
         <Stack
           direction="row"
           alignItems="center"
@@ -75,15 +75,21 @@ export default function ProjectsSection() {
           sx={{
             flexWrap: 'wrap',
             gap: 1,
-            rowGap: 1.25,
+            rowGap: 1,
+            p: { xs: 1.25, sm: 1.5 },
+            borderRadius: 3,
+            bgcolor: 'background.paper',
+            border: 1,
+            borderColor: 'divider',
+            boxShadow: '0 1px 2px rgba(15, 23, 42, 0.03)',
           }}
           role="toolbar"
           aria-label="Filter projects by discipline and technology"
         >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mr: 0.5, color: 'text.secondary' }}>
-            <FilterListIcon sx={{ fontSize: 18 }} />
-            <Typography variant="caption" sx={{ fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Filter:
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, px: 1, mr: 0.5, color: 'text.secondary' }}>
+            <FilterListIcon sx={{ fontSize: 18, color: 'secondary.main' }} />
+            <Typography variant="caption" sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              Filter
             </Typography>
           </Box>
           {FILTERS.map((filter) => {
@@ -97,12 +103,15 @@ export default function ProjectsSection() {
                 color={isSelected ? 'primary' : 'default'}
                 variant={isSelected ? 'filled' : 'outlined'}
                 sx={{
-                  fontWeight: isSelected ? 600 : 500,
+                  fontWeight: isSelected ? 650 : 500,
                   fontSize: '0.8125rem',
+                  height: 34,
+                  borderRadius: 2,
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 0.18s ease',
                   '&:hover': {
                     bgcolor: isSelected ? 'primary.dark' : 'action.hover',
+                    transform: 'translateY(-1px)',
                   },
                 }}
                 aria-pressed={isSelected}
