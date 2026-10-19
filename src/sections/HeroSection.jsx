@@ -43,8 +43,8 @@ export default function HeroSection() {
             <Typography className="hero-lead">Full-stack development. Applied AI &amp; analytics.</Typography>
             <Typography className="hero-intro">{personalInfo.intro}</Typography>
             <div className="hero-actions">
-              <Button href="#projects" onClick={(event) => handleSectionLink(event, 'projects')} variant="contained">Explore my work</Button>
-              <Button href={personalInfo.resumePath} target="_blank" rel="noopener noreferrer" variant="outlined">View résumé</Button>
+              <Button href="#projects" onClick={(event) => handleSectionLink(event, 'projects')} variant="contained" size="large" sx={{ minWidth: 168 }}>Explore my work</Button>
+              <Button href={personalInfo.resumePath} target="_blank" rel="noopener noreferrer" variant="outlined" size="large" sx={{ minWidth: 148 }}>View résumé</Button>
             </div>
             <div className="hero-socials">
               <a className="quiet-link" href={personalInfo.githubUrl} target="_blank" rel="noopener noreferrer"><GitHubIcon sx={{ fontSize: 17 }} />GitHub</a>
