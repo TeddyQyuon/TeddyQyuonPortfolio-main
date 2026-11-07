@@ -1,0 +1,107 @@
+/* Design tokens. Dark is the default theme; light overrides below. */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* Type */
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-15: 0.9375rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-kpi: clamp(1.6rem, 3vw, 2rem);
+  --fs-h2: clamp(1.6rem, 3.2vw, 2.2rem);
+  --fs-h1: clamp(2rem, 4.5vw, 3rem);
+  --fs-hero: clamp(2.3rem, 5.5vw, 3.6rem);
+  --fs-stat: 3rem;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --container: 1200px;
+  --topbar-h: 64px;
+  /* Motion */
+  --dur-instant: 80ms;   /* press feedback */
+  --dur-fast: 150ms;     /* hover/focus colour, icon nudges, row swap, exits */
+  --dur-base: 220ms;     /* menu, route enter, filter crossfade, theme crossfade, indicators */
+  --dur-slow: 420ms;     /* hero boot entrances */
+  --dur-slower: 640ms;   /* data reveals: bars, GPA sweep */
+  --dur-count: 800ms;    /* number roll-up */
+  --dur-scan: 700ms;     /* hero scan line (signature only) */
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);    /* entering, hover */
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);     /* leaving */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* on-screen sweeps, crossfades */
+  --ease: var(--ease-out);                       /* legacy alias for existing rules */
+
+  --stagger: 60ms;        /* hero cards */
+  --stagger-tight: 35ms;  /* bars, filtered cards */
+
+  --nudge: 3px;           /* arrow icons on hover */
+  --nudge-diag: 2px;      /* external-link icon, x and y */
+  --rise-sm: 4px;         /* route enter */
+  --rise: 8px;            /* hero boot, mobile menu */
+  --press-scale: 0.97;
+  --zoom: 1.03;           /* project thumbnail */
+  --zoom-sm: 1.02;        /* case-study screenshot */
+
+  --delay-loading: 300ms; /* Suspense fallback shows only after this */
+
+  color-scheme: dark;
+  --bg: #0b1120;
+  --surface: #111a2e;
+  --surface-2: #17223a;
+  --surface-3: #1e2a45;
+  --border: #24314f;
+  --border-strong: #33446b;
+  --text: #e6ecf5;
+  --text-muted: #9aa8c2;
+  --text-faint: #7d8ba6;
+  --accent: #22d3ee;
+  --accent-strong: #67e8f9;
+  --accent-soft: rgba(34, 211, 238, 0.12);
+  --on-accent: #04202a;
+  --live: #4ade80;
+  --live-soft: rgba(74, 222, 128, 0.12);
+  --warn: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, 0.12);
+  --info: #93c5fd;
+  --info-soft: rgba(147, 197, 253, 0.12);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+  --logo-chip: #f8fafc;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-2: #f1f4f9;
+  --surface-3: #e7ecf4;
+  --border: #dce3ee;
+  --border-strong: #c3cddd;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-faint: #5b6b82;
+  --accent: #0e7490;
+  --accent-strong: #155e75;
+  --accent-soft: rgba(14, 116, 144, 0.1);
+  --on-accent: #ffffff;
+  --live: #15803d;
+  --live-soft: rgba(21, 128, 61, 0.1);
+  --warn: #a16207;
+  --warn-soft: rgba(161, 98, 7, 0.1);
+  --info: #1d4ed8;
+  --info-soft: rgba(29, 78, 216, 0.08);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.18);
+  --logo-chip: transparent;
+}
